@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>show Tv Show</title>
+
+</head>
+<body>
+    <table class="table">
+        <h1></h1>
+        <thead>
+            <tr>
+                <th></th>
+                <th scope="col">Network:</th>
+                <th scope="col">Release Date:</th>
+                <th scope="col">Description:</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td>{{show_show.title}}</td> 
+                <td>{{show_show.network}}</td>
+                <td>{{show_show.release_date}} </td>
+                <td>{{show_show.content}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Posted By: {{show_show.users.first_name}} {{show_show.users.last_name}}</h2>
+    <a href="/users/dashboard">
+        <button>TV Shows</button>
+    </a> |
+		<a href="/users/logout">
+			<button class="logout">Log Out</button>
+</body>
+</html>

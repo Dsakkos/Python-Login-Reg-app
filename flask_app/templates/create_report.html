@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>create show</title>
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %} {% if messages %}
+		<div id="popup">
+			{% for message in messages %}
+			<p>{{ message }}</p>
+			{% endfor %}
+			<button onclick="popup.remove()">Okay</button>
+		</div>
+		{% endif %} {% endwith %}
+		<h1>Add a New Show</h1>
+		<form action="/new/show" method="POST">
+			<input type="hidden" name="users_id" value="{{ user.id }}" />
+			<div class="form-group">
+				<label for="title">Title:</label>
+				<input type="text" name="title" />
+				<label for="network">Network:</label>
+				<input type="text" name="network" />
+				<label for="release_date">Release Date:</label>
+				<input type="date" name="release_date" />
+				<label for="content">Description:</label>
+				<input type="text" name="content" />
+				<input type="submit" value="Add" />
+			</div>
+		</form>
+		<a href="/users/dashboard">
+			<button>TV Shows</button>
+		</a>
+		<a href="/users/logout">
+			<button class="logout">Log Out</button>
+		</a>
+	</body>
+</html>
